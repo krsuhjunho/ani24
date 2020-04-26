@@ -40,6 +40,7 @@ class LogicAni24(object):
     @staticmethod
     def get_html(url):
         try:
+            time.sleep(3)
             if LogicAni24.session is None:
                 LogicAni24.session = requests.Session()
             LogicAni24.headers['referer'] = LogicAni24.referer
@@ -54,9 +55,7 @@ class LogicAni24(object):
     def get_video_url(episode_id):
         try:
             url = '%s/ani_view/%s.html' % (ModelSetting.get('ani24_url'), episode_id)
-            time.sleep(3)
             data = LogicAni24.get_html(url)
-            time.sleep(3)
             tree = html.fromstring(data)
             tag = tree.xpath('//div[@class="qwgqwf"]')
             if tag:
@@ -69,8 +68,6 @@ class LogicAni24(object):
             url2 = 'https://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
             # url2 = 'https://fileiframe.com/ani_video4/%s.html' % episode_id
             #logger.debug(url2)
-            print (url2)
-            time.sleep(3)
             data = LogicAni24.get_html(url2)
 
             logger.debug(data)
