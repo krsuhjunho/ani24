@@ -27,8 +27,8 @@ from .logic_ani24 import LogicAni24
 
 class Logic(object):
     db_default = {
-        "ani24_url" : "https://ani24zo.com",
-        'download_path' : os.path.join(path_data, 'ani24'),
+        "ani24_url" : "https://yaani24.com/",
+        'download_path' : os.path.join(path_data, 'yaani24'),
         'include_date' : 'False',
         'date_option' : '0', # 0:YYMMDD, 1:YYYY-MM-DD
         'auto_make_folder' : 'True',
