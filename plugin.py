@@ -39,19 +39,19 @@ def plugin_unload():
 
 plugin_info = {
     'version' : '0.1.0.0',
-    'name' : 'Ani24 다운로드',
+    'name' : 'YaAni24 다운로드',
     'category_name' : 'vod',
     'icon' : '',
-    'developer' : 'soju6jan',
-    'description' : 'Ani24 사이트에서 애니 다운로드',
-    'home' : 'https://github.com/soju6jan/ani24',
+    'developer' : 'krsuhjunho',
+    'description' : 'YaAni24 사이트에서 다운로드',
+    'home' : 'https://github.com/krsuhjunho/ani24',
     'more' : '',
 }
 #########################################################
 
 # 메뉴 구성.
 menu = {
-    'main' : [package_name, 'Ani24'],
+    'main' : [package_name, 'YaAni24'],
     'sub' : [
         ['setting', '설정'], ['request', '요청'], ['queue', '큐'], ['log', '로그']
     ], 
