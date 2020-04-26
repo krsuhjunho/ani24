@@ -45,7 +45,7 @@ class LogicAni24(object):
             LogicAni24.headers['referer'] = LogicAni24.referer
             LogicAni24.referer = url
             page = LogicAni24.session.get(url, headers=LogicAni24.headers)
-            return page.content.decode('utf16')
+            return page.content.decode('utf8')
         except Exception as e:
             logger.error('Exception:%s', e)
             logger.error(traceback.format_exc())
@@ -54,20 +54,23 @@ class LogicAni24(object):
     def get_video_url(episode_id):
         try:
             url = '%s/ani_view/%s.html' % (ModelSetting.get('ani24_url'), episode_id)
+            time.sleep(3)
             data = LogicAni24.get_html(url)
+            time.sleep(3)
             tree = html.fromstring(data)
             tag = tree.xpath('//div[@class="qwgqwf"]')
             if tag:
-                title = tag[0].text_content().strip().encode('utf16')
+                title = tag[0].text_content().strip().encode('utf8')
             else:
                 return None
             
             # https://videocdnservicesx.com/files/0/yaani/id_1128.mp4
             # https://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
-            url2 = 'http://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
+            url2 = 'https://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
             # url2 = 'https://fileiframe.com/ani_video4/%s.html' % episode_id
             #logger.debug(url2)
             print (url2)
+            time.sleep(3)
             data = LogicAni24.get_html(url2)
 
             logger.debug(data)
