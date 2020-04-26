@@ -45,7 +45,7 @@ class LogicAni24(object):
             LogicAni24.headers['referer'] = LogicAni24.referer
             LogicAni24.referer = url
             page = LogicAni24.session.get(url, headers=LogicAni24.headers)
-            return page.content.decode('utf8')
+            return page.content.decode('utf16')
         except Exception as e:
             logger.error('Exception:%s', e)
             logger.error(traceback.format_exc())
@@ -58,7 +58,7 @@ class LogicAni24(object):
             tree = html.fromstring(data)
             tag = tree.xpath('//div[@class="qwgqwf"]')
             if tag:
-                title = tag[0].text_content().strip().encode('utf8')
+                title = tag[0].text_content().strip().encode('utf16')
             else:
                 return None
             
