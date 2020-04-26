@@ -61,7 +61,10 @@ class LogicAni24(object):
                 title = tag[0].text_content().strip().encode('utf8')
             else:
                 return None
-            url2 = 'https://fileiframe.com/ani_video4/%s.html?player=' % episode_id
+            
+            # https://videocdnservicesx.com/files/0/yaani/id_1128.mp4
+            # 'https://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
+            url2 = 'https://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
             #logger.debug(url2)
             data = LogicAni24.get_html(url2)
 
