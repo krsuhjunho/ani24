@@ -101,6 +101,7 @@ class LogicQueue(object):
                     #logger.debug(LogicQueue.current_ffmpeg_count)
                     time.sleep(5)
                 entity = LogicQueue.download_queue.get()
+                print(entity)
                 if entity.cancel:
                     continue
                 
