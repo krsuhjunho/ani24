@@ -64,7 +64,7 @@ class LogicAni24(object):
             
             # https://videocdnservicesx.com/files/0/yaani/id_1128.mp4
             # https://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
-            url2 = 'https://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
+            url2 = 'http://videocdnservicesx.com/files/0/yaani/id_%s.mp4' % episode_id
             # url2 = 'https://fileiframe.com/ani_video4/%s.html' % episode_id
             #logger.debug(url2)
             print (url2)
